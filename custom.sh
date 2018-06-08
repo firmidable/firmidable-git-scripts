@@ -191,8 +191,8 @@ function git_roll_live() {
 function git_nuke_dev() {
 	echo -e '\e[41mOh no!\e[0m'
 	echo -e '\e[33mMoving to main directory...\e[0m'
-	echo -e '\e[92mcd ~\e[0m'
-	cd ~
+	echo -e '\e[92mcd ~/public_html/\e[0m'
+	cd ~/public_html/
 	source dev/.database.sh
 	echo -e '\e[33mDropping all tables in dev database...\e[0m'
 	echo -e '\e[92mmysqldump -u '"$DBUSER"' -p\x27'"$DBPASS"'\x27 '"$DBNAME"' | grep ^DROP | mysql -u '"$DBUSER"' -p\x27'"$DBPASS"'\x27 '"$DBNAME"'\e[0m'
