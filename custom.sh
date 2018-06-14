@@ -189,8 +189,8 @@ function git_roll_live() {
 
 function git_pull_changes() {
 	echo -e '\e[33mMoving to main directory...\e[0m'
-	echo -e '\e[92mcd ~/public_html\e[0m'
-	cd ~/public_html
+	echo -e '\e[92mcd ~\e[0m'
+	cd ~
 	echo -e '\e[33mPulling live database...\e[0m'
 	echo -e '\e[92mdb_pull\e[0m'
 	db_pull
