@@ -211,3 +211,11 @@ function git_nuke_dev() {
 	git branch -D dev
 	echo -e '\e[93mPlease run git_dev again to create the dev site.\e[0m'
 }
+
+# username directory current_git_branch
+function set_prompt_git_repo() {
+        ARGBLARF=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
+        PS1="\u \[\e[35m\]\w \[\e[32m\]$ARGBLARF\[\e[37m\] $ "
+}
+PROMPT_COMMAND=set_prompt_git_repo
+
